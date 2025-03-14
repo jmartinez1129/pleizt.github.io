@@ -1,0 +1,1516 @@
+updated_css = """
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 🔧 Asegurar que el body y los contenedores no tengan bordes ni márgenes */
+body, .container {
+    margin: 1 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Aplicar fondo uniforme a toda la página */
+body {
+    background-color: #F3F4F6 !important; /* Gris uniforme */
+}
+
+/* Asegurar que todas las secciones tengan el mismo color */
+.hero, 
+.valores-section, 
+.nuestros-productos-section, 
+.clientes-section, 
+.faq-section {
+    background-color: #F3F4F6 !important; /* Mismo gris en todas las secciones */
+    color: #28304A; /* Ajuste de contraste */
+    padding: 40px 0; /* Asegurar consistencia en los espacios */
+}
+/* === ESTILOS RESPONSIVOS MEJORADOS === */
+
+/* General */
+body, html {
+    width: 100%;
+    overflow-x: hidden; /* Evitar desplazamiento horizontal */
+}
+
+/* Ajustes para dispositivos medianos y móviles */
+@media (max-width: 1024px) {
+    
+    /* Secciones en columna para mejorar la legibilidad */
+    .container, .section {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .optimizacion-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* Cards uniformes */
+    .info-card, .illustration-card {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    /* Tamaños de fuente ajustados */
+    .info-title {
+        font-size: 22px;
+    }
+
+    .info-description, .info-list li {
+        font-size: 15px;
+    }
+
+    .btn-demo {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    
+    /* Ajuste de fuentes */
+    h1, h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .btn-demo {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Corrección en cards */
+    .illustration-card {
+        padding: 20px;
+    }
+
+    /* Corrección en imagen principal */
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Botones y formularios en móviles */
+    .form-container {
+        width: 100%;
+    }
+}
+
+/* Cards de características en columnas */
+@media (max-width: 600px) {
+    .features-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-card {
+        max-width: 100%;
+    }
+}
+
+/* Ajuste de imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Evita deformaciones */
+}
+
+/* Ajustes en las preguntas frecuentes */
+@media (max-width: 1024px) {
+    .faq-container {
+        flex-direction: column;
+    }
+
+    .faq-item {
+        padding: 16px;
+        font-size: 16px;
+    }
+}
+
+/* Excluir el footer para que mantenga su color oscuro */
+.footer {
+    background-color: #28304A !important;
+    color: white;
+}
+
+:root {
+    --primary-blue: #28304A;
+    --secondary-gray: #7E8392;
+    --line-gray: #C0C0C0;
+    --text-gray: #6D6D6D;
+}
+
+/* Header más compacto */
+.header {
+    background-color: #F3F4F6 !important; /* Mantener el mismo fondo */
+    border-bottom: none !important; /* Eliminar bordes */
+    box-shadow: none !important; /* Eliminar sombras */
+    margin-bottom: 0 !important; /* Evitar separación */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+}
+.header {
+    background: #F3F4F6;
+    padding: 5px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Reducida altura */
+}
+
+/* Ajustar logo */
+.logo img {
+    height: 40px; /* Reducir tamaño del logo */
+}
+
+/* Ajustar menú para mejor alineación */
+.nav-menu {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #28304A;
+    font-weight: 400;
+    font-size: 16px; /* Tamaño más compacto */
+}
+
+/* Ajustar botón de inicio de sesión */
+.btn-ingresar {
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+/* Reducir espacio entre header y la primera sección */
+.hero {
+    padding-top: 60px !important;
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+}
+
+/* Reducir padding en la sección de valores */
+.valores-section {
+    padding: 40px 0 !important;
+}
+/* Ajustar distribución de las cards pequeñas */
+.valores-grid {
+    display: flex;
+    gap: 10px;
+}
+
+/* Cards generales */
+.valores-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 250px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Card grande */
+.valores-card-grande {
+    height: auto;
+    padding: 30px;
+    margin-bottom: 10px;
+    
+}
+
+/* Card del celular (Acceso Móvil) */
+.valores-card-movil {
+    height: 100%;
+}
+
+.valores-card-movil img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Card de Síguenos - Fondo azul y alineación correcta */
+.valores-card-siguenos {
+    background: var(--primary-blue) !important;
+    color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valores-card-siguenos h4 {
+    color: white !important;
+}
+
+.valores-card-siguenos .d-flex a {
+    font-size: 20px;
+    color: white !important;
+}
+/* Asegurar que las cards tengan altura completa */
+.valores-card-movil, 
+.valores-card-imagen {
+    display: flex;
+    align-items: stretch; /* Estira la imagen al tamaño de la card */
+    height: 100%; /* Forzar la altura completa */
+    padding: 0; /* Quitar relleno interno */
+}
+
+/* Expandir imágenes al 100% dentro de las cards */
+.valores-card-movil img, 
+.valores-card-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rellena la card sin distorsionar */
+    border-radius: 12px; /* Mantiene esquinas redondeadas */
+}
+/* Hero Section */
+.hero {
+    border-top: none !important; /* Eliminar cualquier borde superior */
+    box-shadow: none !important; /* Eliminar sombras */
+    margin-top: 0 !important; /* Evitar separación */
+    padding-top: 80px !important; /* Ajustar para compensar el header fijo */
+}
+.hero-content {
+    max-width: 800px;
+    color: #1d2c4b;
+    position: relative; /* Aseguramos que el texto esté encima de la imagen */
+    z-index: 10; /* Colocamos el texto por encima de la imagen */
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    font-weight: bold;
+    color: #1d2c4b;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #4a4a4a;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #1d2c4b;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #142030;
+}
+
+.hero-button svg {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+.hero {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    text-align: center;
+    background-image: url('images/[HERO_IMAGE]'); /* Cambia la ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Ajusta el color de texto si es necesario */
+}
+/* Imagen decorativa debajo del texto */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Ajusta la altura para que la imagen ocupe la mitad inferior del hero */
+    background: url('images/[HERO_IMAGE]') no-repeat center bottom;
+    background-size: contain; /* Ajusta el tamaño para que la imagen se vea completa, sin estirarse */
+    z-index: 5; /* Colocamos la imagen debajo del texto (z-index menor que 10) */
+}
+/* Nuestros productos Section */
+/* 🚀 SECCIÓN NUESTROS PRODUCTOS Y SOLUCIONES */
+.nuestros-productos-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Contenedor de la sección */
+.nuestros-productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Texto de presentación */
+.nuestros-productos-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-gray);
+}
+
+/* Subtítulo */
+.nuestros-productos-text h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+/* Descripción */
+.nuestros-productos-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--secondary-gray);
+}
+
+/* Contenedor de la descripción */
+.nuestros-productos-info {
+    flex: 1;
+    min-width: 300px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--secondary-gray);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nuestros-productos-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nuestros-productos-text,
+    .nuestros-productos-info {
+        text-align: center;
+        max-width: 90%;
+    }
+}
+
+/* 🚀 SECCIÓN MENÚS DIGITALES */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    gap: 40px;
+}
+
+/* Contenedor de texto */
+.text-content {
+    flex: 1;
+    max-width: 500px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+/* Lista de productos */
+.text-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.text-content li {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 8px;
+    color: var(--primary-blue);
+}
+
+/* Separador en cada ítem */
+.text-content li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--line-gray);
+}
+
+/* Imagen de los menús digitales */
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: 350px;
+}
+
+/* Imágenes dentro del contenedor */
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Elementos decorativos */
+.decorative-elements {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.star, .dot {
+    position: absolute;
+}
+
+.star {
+    width: 50px;
+    height: 50px;
+    background: url('images/star.png') no-repeat center center;
+    background-size: contain;
+}
+
+.dot.red {
+    width: 15px;
+    height: 15px;
+    background: #FF4136;
+    border-radius: 50%;
+}
+
+.dot.blue {
+    width: 15px;
+    height: 15px;
+    background: #0074D9;
+    border-radius: 50%;
+}
+
+.dot.yellow {
+    width: 15px;
+    height: 15px;
+    background: #FFDC00;
+    border-radius: 50%;
+}
+
+/* Ubicación de los elementos decorativos */
+.star { top: 10%; left: 10%; }
+.dot.red { top: 20%; left: 20%; }
+.dot.blue { top: 30%; left: 30%; }
+.dot.yellow { top: 40%; left: 40%; }
+
+/* Botón */
+.btn-demo {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-demo:hover {
+    background-color: #1a1a2e;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .text-content,
+    .image-content {
+        max-width: 100%;
+    }
+
+    .text-content ul {
+        text-align: left;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-content img {
+        max-width: 80%;
+    }
+}
+
+/* Nuestros clientes */
+/* Contenedor principal */
+.clientes-section {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Títulos */
+.clientes-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #28304A;
+}
+
+.clientes-section p {
+    font-size: 16px;
+    color: #6D6D6D;
+    margin-bottom: 30px;
+}
+
+/* Estilos para las etiquetas */
+.clientes-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.clientes-tags span {
+    font-size: 14px;
+    padding: 12px 24px;
+    border: 2px solid #C0C0C0;
+    border-radius: 30px;
+    color: #28304A;
+    background: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.clientes-tags span:hover {
+    transform: translateY(-2px);
+}
+
+/* Contenedor de logos */
+.clientes-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Ajuste de los logos */
+.clientes-logos img {
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.clientes-logos img:hover {
+    transform: scale(1.1);
+}
+
+/* Botón de Reserva */
+.clientes-section .btn-demo {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #28304A;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.clientes-section .btn-demo:hover {
+    background-color: #1A1A2E;
+}
+
+
+/* FAQs */
+/* Sección de Preguntas Frecuentes */
+.faq-section {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Mantiene imagen y preguntas con la misma altura */
+    gap: 40px;
+    padding: 60px 0;
+}
+
+/* Contenedor de la imagen en la sección FAQs */
+.faq-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%; /* Mantiene una altura proporcional */
+    overflow: hidden; /* Evita que la imagen desborde */
+}
+
+/* Imagen dentro del contenedor */
+.faq-image img {
+    width: 100%;
+    height: auto;
+    max-height: 450px; /* Ajusta la altura sin perder calidad */
+    object-fit: contain; /* Asegura que la imagen completa sea visible */
+    border-radius: 12px; /* Mantiene el diseño con bordes redondeados */
+}
+
+/* Sección de Preguntas Frecuentes */
+.faq-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 0;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Sección de Preguntas Frecuentes */
+.faq-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Mantiene la imagen y preguntas alineadas */
+    gap: 50px;
+    padding: 60px 0;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Contenedor de la imagen FAQ */
+.faq-image {
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Mantiene el tamaño fijo */
+}
+
+/* Imagen fija */
+.faq-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 400px; /* Mantiene la proporción correcta */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Contenedor de preguntas */
+.faq-content {
+    flex: 1;
+    max-width: 50%;
+    min-height: 400px; /* Mantiene un tamaño constante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Título */
+.faq-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #28304A;
+    margin-bottom: 10px;
+}
+.faq-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #28304A;
+    margin-bottom: 5px; /* Reducir el espacio inferior */
+}
+
+/* Subtítulo */
+.faq-content p {
+    font-size: 18px;
+    color: #6D6D6D;
+    margin-bottom: 20px;
+}
+
+.faq-content p {
+    font-size: 18px;
+    color: #6D6D6D;
+    margin-bottom: 25px; /* Ajustar el espaciado con las preguntas */
+}
+
+/* Contenedor de preguntas */
+.faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1; /* Hace que ocupe el mismo espacio siempre */
+}
+
+/* Ajustar el tamaño del contenedor de cada pregunta */
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Sombra para darle más aire */
+    border: 1px solid #D1D5DB;
+    transition: all 0.3s ease-in-out;
+    padding: 12px 20px; /* Aumenta el espacio interno */
+}
+
+/* Cuando la pregunta está activa */
+.faq-item.active {
+    border: 2px solid #28304A; /* Borde más oscuro cuando está abierta */
+}
+
+
+/* Botón de pregunta */
+/* Ajustar la pregunta para que tenga más espacio */
+.faq-question {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+/* Ajustar el ícono "+" para que quede bien alineado */
+.faq-question .faq-icon {
+    margin-left: auto; /* Mueve el "+" completamente a la derecha */
+    font-size: 22px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+/* Icono "+" */
+.faq-icon {
+    font-size: 22px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+/* Respuesta oculta por defecto */
+.faq-answer {
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 1.6;
+}
+
+/* Cuando la pregunta está activa, la respuesta se muestra */
+.faq-item.active .faq-answer {
+    display: block;
+}
+/* Espaciado adicional en la respuesta */
+.faq-answer {
+    display: none;
+    padding: 15px 20px; /* Añadir espacio a la respuesta */
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 1.6;
+}
+/* Girar el icono cuando está activo */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .faq-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .faq-image {
+        max-width: 90%;
+    }
+
+    .faq-image img {
+        height: auto;
+        max-height: 350px;
+    }
+
+    .faq-content {
+        max-width: 90%;
+    }
+}
+
+/* Botón de pregunta */
+.faq-question {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Icono "+" */
+.faq-icon {
+    font-size: 22px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+/* Respuesta oculta por defecto */
+.faq-answer {
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 1.6;
+}
+
+/* Cuando la pregunta está activa, la respuesta se muestra */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Girar el icono cuando está activo */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .faq-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .faq-image {
+        max-width: 80%;
+    }
+
+    .faq-content {
+        max-width: 90%;
+    }
+}
+/* Botón de la pregunta */
+.faq-question {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Icono "+" */
+.faq-icon {
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+/* Respuesta oculta por defecto */
+.faq-answer {
+    display: none;
+    padding: 15px;
+    font-size: 14px;
+    color: #4A4A4A;
+    line-height: 1.5;
+}
+
+/* Cuando la pregunta está activa, la respuesta se muestra y el "+" gira */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .faq-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .faq-image {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .faq-content {
+        width: 90%;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #28304A;
+    color: #ffffff;
+    padding: 50px 20px;
+    font-family: 'Objektiv Mk2', sans-serif;
+    min-height: 500px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.footer-left {
+    max-width: 30%;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.footer-left h2 {
+    font-size: 32px;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+.footer-left p {
+    color: #d1d5db;
+    font-size: 16px;
+    margin: 0 0 45px 0;
+}
+
+.footer-left h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 10px 0px 15px;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Alineado a la izquierda */
+    margin-left: 0; /* Asegura que estén a la izquierda */
+}
+
+.social-icon {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #00c4cc;
+}
+
+.footer-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #d1d5db;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.footer-right input,
+.footer-right textarea {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 12px;
+    color: #6b7280;
+    width: 500px; /* Aumentado para que sea más largo, ajustado según FAQ */
+    box-sizing: border-box;
+}
+
+.footer-right input {
+    height: 35px;
+}
+
+.footer-right textarea {
+    height: 100px;
+    resize: none;
+}
+
+.footer-right input::placeholder,
+.footer-right textarea::placeholder {
+    color: #6b7280;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px; /* Espacio entre checkbox y botón */
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.terms-checkbox input {
+    width: 16px; /* Reducido tamaño de la palomita */
+    height: 14px;
+    margin-right: 5px;
+}
+
+.terms-checkbox label {
+    color: #d1d5db;
+    font-size: 10px; /* Texto más pequeño para ajustar */
+    max-width: 490px; /* Limita el ancho del texto */
+}
+
+.footer-right button {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.footer-right button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 10px auto 0;
+    text-align: left; /* Alineado a la izquierda */
+    border-top: 1px solid #d1d5db;
+    padding-top: 10px;
+}
+
+.footer-bottom nav {
+    margin-bottom: 0px;
+}
+
+.footer-bottom nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 2px 5px;
+    display: inline-block; /* Asegura que estén alineados a la izquierda */
+}
+
+.footer-bottom nav a:hover {
+    color: #00c4cc;
+}
+
+.footer-bottom p {
+    color: #d1d5db;
+    font-size: 10px;
+    margin: 10px 10px;
+    text-align: center; /* Alineado a la izquierda */
+}
+
+.legal-links {
+    text-align: left; /* Alineado a la izquierda */
+}
+
+.legal-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 10px;
+    margin:0px px;
+}
+
+.legal-links a:hover {
+    color: #00c4cc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        max-width: 100%;
+    }
+
+    .footer-right input,
+    .footer-right textarea {
+        width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-right button {
+        margin-top: 10px;
+    }
+
+    .social-icons {
+        justify-content: flex-start; /* Mantiene alineación izquierda en móvil */
+        margin-left: 0;
+    }
+
+    .footer-bottom nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .footer-bottom p,
+    .legal-links {
+        text-align: center; /* Centrado en móvil por legibilidad */
+    }
+}
+/* Contenedor de la sección optimizacion */
+/* Sección General */
+.optimizacion-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #F3F4F6;
+    font-family: 'Poppins', sans-serif; /* Aplica el mismo tipo de letra */
+}
+
+/* Título y subtítulo */
+.optimizacion-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #28304A; /* Color primario */
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.optimizacion-text h2 span {
+    color: #28304A;
+}
+
+/* Contenedor de las Cards */
+.optimizacion-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Se asegura de que ambas cards tengan la misma altura */
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Card de Información */
+.info-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 45%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Hace que la card se expanda y mantenga altura uniforme */
+}
+
+/* Titulos y textos */
+.info-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #28304A; /* Color primario */
+}
+
+.info-title .highlight {
+    color: #28304A;
+}
+
+.info-description {
+    font-size: 16px;
+    color: #6D6D6D;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Lista de Beneficios */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.info-list li {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #28304A;
+    margin-bottom: 12px;
+}
+
+.info-list li span {
+    background: #28304A; /* Color primario */
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+/* Botón */
+.btn-demo {
+    background-color: #28304A; /* Color primario */
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%; /* Hace que el botón tenga ancho uniforme */
+    text-align: center;
+}
+
+.btn-demo:hover {
+    background-color: #28304A;
+    transform: translateY(-2px);
+}
+
+/* Card de Ilustración */
+.illustration-card {
+    background: white;
+    padding: 29px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 45%;
+    max-width: 500px;
+    height: 100%; /* Igual altura que la card de texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-image {
+    width: 130%;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .optimizacion-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-card,
+    .illustration-card {
+        width: 100%;
+    }
+
+    .optimizacion-text h2 {
+        text-align: center;
+    }
+}
+
+/* Contenedor de la sección */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+    background-color: #F3F4F6;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjetas */
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 0; /* Elimina el padding interno para que la imagen ocupe todo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* Hace que la card siempre tenga el mismo tamaño */
+    overflow: hidden; /* Evita que la imagen se desborde */
+}
+
+/* Imágenes en las tarjetas */
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin distorsionarse */
+    border-radius: 12px; /* Mantiene bordes redondeados si es necesario */
+    display: block; /* Elimina cualquier espacio extra */
+}
+
+
+/* Iconos */
+.feature-icon {
+    margin-bottom: 20px; /* Espaciado entre el icono y el título */
+}
+
+/* Estilo del título */
+.feature-card h3 {
+    color: #1a2a44;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px; /* Espaciado entre el título y el párrafo */
+}
+
+/* Estilo del texto */
+.feature-card p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .features-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .features-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .feature-card {
+        min-height: auto;
+    }
+}
+* Contenedor de información de contacto */
+.footer-contact {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea separadora */
+    font-family: 'Poppins', sans-serif; /* Unificar fuente */
+}
+
+/* Elementos de contacto alineados */
+.contact-item {
+    display: flex;
+    align-items: center; /* Asegurar que iconos y texto estén alineados */
+    gap: 10px; /* Espacio entre el icono y el texto */
+    margin-bottom: 15px;
+}
+
+/* Iconos de contacto */
+.contact-item .icon {
+    background-color: transparent; /* Quitar fondo del icono */
+    color: white;
+    font-size: 18px; /* Ajustar tamaño del icono */
+    width: 25px; /* Tamaño uniforme */
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Texto de contacto alineado */
+.contact-item .info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Títulos de contacto */
+.contact-item .info strong {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+/* Texto de contacto */
+.contact-item .info p {
+    font-size: 14px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+/* Ajuste del botón "Enviar mensaje" */
+.footer-right button {
+    width: 100%; /* Asegurar que el botón tenga un ancho definido */
+    text-align: center; /* Centrar el texto */
+    display: flex;
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    padding: 12px;
+    font-size: 16px; /* Ajustar tamaño de la fuente si es necesario */
+}
