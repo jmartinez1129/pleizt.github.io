@@ -1117,9 +1117,9 @@ img {
 }
 
 .terms-checkbox input {
-    width: 16px; /* Reducido tamaño de la palomita */
-    height: 14px;
-    margin-right: 5px;
+    width: 16px !important; /* Reducido tamaño de la palomita */
+    height: 14px !important;
+    margin-right: 5px !important;
 }
 
 .terms-checkbox label {
